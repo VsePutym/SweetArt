@@ -1,0 +1,57 @@
+.GalinaBG{
+  width: 450px;
+  float: right;
+  margin-top: 30px;
+}
+.wrapperGalinaInfo{
+  text-align: center;
+}
+.title {
+  padding-bottom: 20px;
+  display: inline-block;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  position: relative;
+}
+.title::before {
+  border-bottom: solid black;
+  content: '';
+  width: 50px;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.description{
+  padding: 20px;
+  text-align: start;
+  max-width: 900px;
+}
+
+.text1,.text2,.text3{
+  margin: 30px;
+  padding-left: 150px;
+}
+.instagram{
+  width: 150px;
+}
+.wrapperInstagram{
+  max-width: 852px;
+  cursor: pointer;
+  margin-left: 180px;
+  align-items: center;
+  display: flex;
+  font-size: 50px;
+}
+.btn{
+  margin-left: 70px;
+  padding: 15px;
+  box-shadow: 1px 4px 6px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+}
+

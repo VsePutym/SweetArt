@@ -1,0 +1,38 @@
+//ModalOrder
+.wrapper{
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+.testCake{
+  max-width: 50%;
+}
+.orderInfo{
+  border-left: 2px solid #7625B0;
+  padding-left: 30px;
+}
+.testInput{
+  padding-bottom: 15px;
+}
+.inputForm{
+  align-items: center;
+  display: grid;
+  grid-template-areas: 'a b';
+  padding: 10px 0;
+  grid-template-columns: 1fr 2fr;
+  input{
+    border-radius: 20px;
+    width: 100%;
+    height: 40px;
+    background-color: #cccc;
+    border: none;
+    outline: none;
+    &::placeholder {
+      color: #898f96;
+      outline: none;
+    }
+  }
+}
+.inputTitle{
+  padding-right: 10px;
+}

@@ -1,6 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import firebase from "firebase/compat/app";
+import Header from './components/Header/Header'
+import WhyInfo from "./components/WhyInfo/WhyInfo";
+import GalinaInfo from "./components/GalinaInfo/GalinaInfo";
+import Recipe from "./components/Recipe/Recipe";
+import Modal from "./components/Modal/Modal";
+import {Context} from './Functions/Context'
+// import useOpenModal from "./hooks/useOpenModal";
+import useContacts from "./hooks/useContacts";
+import Photos from "./components/Photos/Photos";
+import useGalleryPhotos from "./hooks/useGalleryPhotos";
+import arrowUp from '../src/images/arrowUp.svg'
+import {animateScroll as scroll} from 'react-scroll';
+import Footer from "./components/Footer/Footer";
+import ModalOrder from "./components/ModalOrder/ModalOrder";
+import useOpenModal from "./hooks/useOpenModal";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCclR1cOUO4JtIQ-2j2xmc7RbQ0YZUnsTU",
@@ -16,23 +31,30 @@ firebase.initializeApp(firebaseConfig);
 
 
 function App() {
+
+
+  const showContact = useContacts();
+  const showGalleryPhotos = useGalleryPhotos();
+  const showModal = useOpenModal();
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Sweet Art
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={{showContact, showGalleryPhotos, showModal}}>
+      <div className="App">
+        <Header/>
+        <WhyInfo/>
+        <GalinaInfo/>
+        <Recipe/>
+        <Photos />
+        <Footer />
+        <Modal active={showContact.contact} setActive={showContact.setContact}>
+          <div className='contacts'>Contacts</div>
+          <div className='contacts'>Модуль пока в доработке, ожидайте....</div>
+        </Modal>
+        <ModalOrder />
+        <img className='arrowUp' onClick={() => scroll.scrollToTop()} src={arrowUp} alt=""/>
+      </div>
+    </Context.Provider>
   );
 }
 

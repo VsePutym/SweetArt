@@ -1,0 +1,99 @@
+.wrapperGallery {
+  text-align: center;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.title {
+  padding-bottom: 20px;
+  display: inline-block;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.wrapper {
+  text-align: center;
+  align-items: center;
+}
+
+.title::before {
+  border-bottom: solid black;
+  content: '';
+  width: 50px;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.openModal {
+  position: relative;
+}
+
+.cat {
+  width: 200px;
+  cursor: pointer;
+}
+.wrapperArrow{
+  position: relative;
+}
+.arrowDown{
+  width: 100px;
+  position: absolute;
+  top: 30px;
+  left: 35%;
+}
+.counter {
+  display: flex;
+  position: absolute;
+  bottom: 5%;
+  right: 47%;
+  padding: 15px 12.5px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background-color: white;
+}
+.slesh,
+.counterNow,
+.counterAll{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.arrowNext,
+.arrowPrev {
+  width: 50px;
+  position: fixed;
+  top: 45%;
+}
+
+.arrowNext {
+  right: 10%;
+}
+
+.arrowPrev {
+  left: 10%;
+  transform: rotate(180deg);
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  display: none;
+  border-radius: 16px;
+  height: 90vh;
+}
+.testText{
+  display: block;
+  text-align: center;
+  margin-top: 100px;
+  padding: 0 200px 100px;
+}
